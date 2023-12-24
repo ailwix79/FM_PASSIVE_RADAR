@@ -16,8 +16,8 @@ modulating_signal = sin(2*pi*Fm*t);
 xmod = sin(2*pi*(Fc+freqdev.*modulating_signal.*x).*t);
 
 PRF = 1/T;
-[afmagdel,delay] = ambgfun(xmod,Fs,PRF,"Cut","Doppler");
-[afmagdop,doppler] = ambgfun(xmod,Fs,PRF,"Cut","Delay");
+[afmagdel,doppler] = ambgfun(xmod,Fs,PRF,"Cut","Doppler");
+[afmagdop,delay] = ambgfun(xmod,Fs,PRF,"Cut","Delay");
 
 range_resolution = (3e8/B)*1e-3;
 velocity_resolution = (3e8/(Fc*T))*3.6;
